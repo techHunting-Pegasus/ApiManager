@@ -6,24 +6,44 @@
 //
 
 import UIKit
+import Combine
 
 class BaseVC: UIViewController {
-
+    var subscriptions = Set<AnyCancellable>()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        Networklost()
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func Networklost(){
+        Reachability.shared.publisher
+                   .sink { path in
+                       if path.isReachable {
+                           
+                           print("isOn")
+//                           self.ImageView?.isHidden = true
+                          
+                       } else {
+                           print("isOff")
+//                           self.ImageView?.isHidden = false
+                         
+                       }
+                   }
+                   .store(in: &subscriptions)
     }
-    */
+    func showError(_ error: Error) {
+        // Show an error message to the user
+        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func showLoader(){
+        
+    }
+    func hideLoader(){
+        
+    }
 
 }

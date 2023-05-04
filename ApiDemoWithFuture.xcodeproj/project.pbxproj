@@ -13,9 +13,20 @@
 		5241589C29F8F94800192294 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5241589A29F8F94800192294 /* Main.storyboard */; };
 		5241589E29F8F94900192294 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5241589D29F8F94900192294 /* Assets.xcassets */; };
 		524158A129F8F94900192294 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5241589F29F8F94900192294 /* LaunchScreen.storyboard */; };
+		524158A929F8FA2300192294 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524158A829F8FA2300192294 /* ApiService.swift */; };
+		524158AB29F8FA3800192294 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524158AA29F8FA3800192294 /* ViewModel.swift */; };
+		524158AD29F9011900192294 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524158AC29F9011900192294 /* model.swift */; };
+		524158AF29F936B200192294 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524158AE29F936B200192294 /* Constants.swift */; };
+		524158B129F9378B00192294 /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524158B029F9378B00192294 /* ApiRequest.swift */; };
+		52513C8F29FA586500811ACC /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52513C8E29FA586500811ACC /* BaseVC.swift */; };
+		52513C9129FA5F4D00811ACC /* AppResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52513C9029FA5F4D00811ACC /* AppResponse.swift */; };
+		52513C9329FA691500811ACC /* AppDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52513C9229FA691500811ACC /* AppDefault.swift */; };
+		52709EB329FBCFB200CBD872 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52709EB229FBCFB200CBD872 /* NetworkMonitor.swift */; };
+		859FF92EFDB1B592D3347F69 /* Pods_ApiDemoWithFuture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2EE9499F46B9CB9C00598D /* Pods_ApiDemoWithFuture.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2452A874BFFDDC0FA74818A5 /* Pods-ApiDemoWithFuture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiDemoWithFuture.release.xcconfig"; path = "Target Support Files/Pods-ApiDemoWithFuture/Pods-ApiDemoWithFuture.release.xcconfig"; sourceTree = "<group>"; };
 		5241589129F8F94800192294 /* ApiDemoWithFuture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApiDemoWithFuture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5241589429F8F94800192294 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5241589629F8F94800192294 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +35,17 @@
 		5241589D29F8F94900192294 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		524158A029F8F94900192294 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		524158A229F8F94900192294 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		524158A829F8FA2300192294 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		524158AA29F8FA3800192294 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		524158AC29F9011900192294 /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
+		524158AE29F936B200192294 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		524158B029F9378B00192294 /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
+		52513C8E29FA586500811ACC /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		52513C9029FA5F4D00811ACC /* AppResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppResponse.swift; sourceTree = "<group>"; };
+		52513C9229FA691500811ACC /* AppDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDefault.swift; sourceTree = "<group>"; };
+		52709EB229FBCFB200CBD872 /* NetworkMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		77000FFE6186DFF62948448E /* Pods-ApiDemoWithFuture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiDemoWithFuture.debug.xcconfig"; path = "Target Support Files/Pods-ApiDemoWithFuture/Pods-ApiDemoWithFuture.debug.xcconfig"; sourceTree = "<group>"; };
+		FE2EE9499F46B9CB9C00598D /* Pods_ApiDemoWithFuture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApiDemoWithFuture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				859FF92EFDB1B592D3347F69 /* Pods_ApiDemoWithFuture.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +65,8 @@
 			children = (
 				5241589329F8F94800192294 /* ApiDemoWithFuture */,
 				5241589229F8F94800192294 /* Products */,
+				ED1D5FF03516E0CABEFDC8D7 /* Pods */,
+				749426BB5F43B715475A9292 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,8 +88,34 @@
 				5241589D29F8F94900192294 /* Assets.xcassets */,
 				5241589F29F8F94900192294 /* LaunchScreen.storyboard */,
 				524158A229F8F94900192294 /* Info.plist */,
+				524158A829F8FA2300192294 /* ApiService.swift */,
+				524158AA29F8FA3800192294 /* ViewModel.swift */,
+				524158AC29F9011900192294 /* model.swift */,
+				524158AE29F936B200192294 /* Constants.swift */,
+				524158B029F9378B00192294 /* ApiRequest.swift */,
+				52513C8E29FA586500811ACC /* BaseVC.swift */,
+				52513C9029FA5F4D00811ACC /* AppResponse.swift */,
+				52513C9229FA691500811ACC /* AppDefault.swift */,
+				52709EB229FBCFB200CBD872 /* NetworkMonitor.swift */,
 			);
 			path = ApiDemoWithFuture;
+			sourceTree = "<group>";
+		};
+		749426BB5F43B715475A9292 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE2EE9499F46B9CB9C00598D /* Pods_ApiDemoWithFuture.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED1D5FF03516E0CABEFDC8D7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				77000FFE6186DFF62948448E /* Pods-ApiDemoWithFuture.debug.xcconfig */,
+				2452A874BFFDDC0FA74818A5 /* Pods-ApiDemoWithFuture.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +125,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 524158A529F8F94900192294 /* Build configuration list for PBXNativeTarget "ApiDemoWithFuture" */;
 			buildPhases = (
+				C50FEA904E281E3B09653F2E /* [CP] Check Pods Manifest.lock */,
 				5241588D29F8F94800192294 /* Sources */,
 				5241588E29F8F94800192294 /* Frameworks */,
 				5241588F29F8F94800192294 /* Resources */,
+				490F987F1D29C844409C723F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,13 +186,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		490F987F1D29C844409C723F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ApiDemoWithFuture/Pods-ApiDemoWithFuture-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ApiDemoWithFuture/Pods-ApiDemoWithFuture-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ApiDemoWithFuture/Pods-ApiDemoWithFuture-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C50FEA904E281E3B09653F2E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ApiDemoWithFuture-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5241588D29F8F94800192294 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52513C9129FA5F4D00811ACC /* AppResponse.swift in Sources */,
+				52709EB329FBCFB200CBD872 /* NetworkMonitor.swift in Sources */,
+				524158AB29F8FA3800192294 /* ViewModel.swift in Sources */,
+				524158AD29F9011900192294 /* model.swift in Sources */,
 				5241589929F8F94800192294 /* ViewController.swift in Sources */,
 				5241589529F8F94800192294 /* AppDelegate.swift in Sources */,
+				52513C9329FA691500811ACC /* AppDefault.swift in Sources */,
+				52513C8F29FA586500811ACC /* BaseVC.swift in Sources */,
+				524158AF29F936B200192294 /* Constants.swift in Sources */,
+				524158A929F8FA2300192294 /* ApiService.swift in Sources */,
+				524158B129F9378B00192294 /* ApiRequest.swift in Sources */,
 				5241589729F8F94800192294 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +386,7 @@
 		};
 		524158A629F8F94900192294 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77000FFE6186DFF62948448E /* Pods-ApiDemoWithFuture.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +415,7 @@
 		};
 		524158A729F8F94900192294 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2452A874BFFDDC0FA74818A5 /* Pods-ApiDemoWithFuture.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
