@@ -26,55 +26,17 @@ class APIService{
     
    
     
-    func GET<T: Decodable>(endpoint: String, objectType: T.Type) -> AnyPublisher<T, Error> {
+
+    func apiHandler<T: Decodable>(endpoint: String, parameters: JsonSerilizer, method: HTTPMethod, objectType: T.Type) -> AnyPublisher<T, Error> {
         print("*************** HEADERS *****************")
         
         let url = URL(string: "\(Constant.BASEURL)\(endpoint)")!
-        print(url,headers)
-        return Future { (promise: @escaping (Result<T, Error>) -> Void) in
-            
-
-            self.sessionManager.request(url,method: .get,parameters: [:],headers: self.headers)
-                .validate()
-                
-                .responseDecodable(of: objectType) { response in
-                switch response.result {
-                case .success(let object):
-                    promise(.success(object))
-
-                    print(object)
-                case .failure(let error):
-                    promise(.failure(error))
-                    print(error)
-                }
-            }
-        }
-        .eraseToAnyPublisher()
-      }
-    
-    func POST<T: Decodable>(endpoint: String, parameters: JsonSerilizer, objectType: T.Type) -> AnyPublisher<T, Error> {
-        let url = URL(string: "\(Constant.BASEURL)\(endpoint)")!
-        print(url,headers)
+        print(url, headers)
+        
+        let encoding: ParameterEncoding = (method == .get) ? URLEncoding.default : JSONEncoding.default
+        
         return Future { promise in
-            self.sessionManager.request(url, method: .post, parameters: parameters.serilize(), encoding: JSONEncoding.default,headers: self.headers)
-                .debugLog()
-                .responseDecodable(of: objectType) { response in
-                    switch response.result {
-                    case .success(let object):
-                        promise(.success(object))
-                        print(object)
-                    case .failure(let error):
-                        promise(.failure(error))
-                    }
-                }
-        }
-        .eraseToAnyPublisher()
-    }
-    
-    func PUT<T: Decodable>(endpoint: String, data: [String: Any], objectType: T.Type) -> AnyPublisher<T, Error> {
-        let url = URL(string: "\(Constant.BASEURL)\(endpoint)")!
-        return Future { promise in
-            AF.request(url, method: .put, parameters: data, headers: self.headers)
+            AF.request(url, method: method, parameters: parameters.serilize(), encoding: encoding)
                 .validate()
                 .responseDecodable(of: objectType) { response in
                     switch response.result {
@@ -90,27 +52,7 @@ class APIService{
         .eraseToAnyPublisher()
     }
     
-    func DELETE<T: Decodable>(endpoint: String, objectType: T.Type) -> AnyPublisher<T, Error> {
-        let url = URL(string: "\(Constant.BASEURL)\(endpoint)")!
-        return Future { promise in
-            AF.request(url, method: .delete, headers: self.headers)
-                .validate()
-                .responseDecodable(of: objectType) { response in
-                    switch response.result {
-                    case .success(let object):
-                        promise(.success(object))
-                        print(object)
-                    case .failure(let error):
-                        promise(.failure(error))
-                        print(error)
-                    }
-                }
-        }
-        .eraseToAnyPublisher()
-    }
-    
-    
-    
+
     
 //MARK: MULTIPLEA API GENRIC FUNCTION
     func MultipleAPI<T: Decodable>(endpoints: [String], objectType: T.Type) -> AnyPublisher<[T], Error> {
@@ -130,21 +72,6 @@ class APIService{
     }
    
 
-    
-    
-    enum APIError: Error {
-        case emptyResponse
-        case decodingError
-        
-        var localizedDescription: String {
-            switch self {
-            case .emptyResponse:
-                return "The API response is empty."
-            case .decodingError:
-                return "Failed to decode the API response."
-            }
-        }
-    }
     
  
     
@@ -248,3 +175,16 @@ extension AFError: LocalizedError {
     }
 }
 
+enum APIError: Error {
+    case emptyResponse
+    case decodingError
+    
+    var localizedDescription: String {
+        switch self {
+        case .emptyResponse:
+            return "The API response is empty."
+        case .decodingError:
+            return "Failed to decode the API response."
+        }
+    }
+}

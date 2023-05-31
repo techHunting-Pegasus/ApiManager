@@ -23,6 +23,7 @@ class ViewModel {
     @Published var error: Error?
     @Published var isLoading = false
     //MARK: set type
+    let commonRequest = CommonRequest()
     
     var type:AppType = .none
     let endpoints = [
@@ -41,27 +42,11 @@ class ViewModel {
     init(apiService: APIService = APIService()) {
         self.apiService = apiService
     }
-    
-    func postExample(parameters:AppRequest) {
-        isLoading = true
-        apiService.POST(endpoint: Constant.endpoint.postApi, parameters: parameters, objectType: postRes.self)
-            .sink(receiveCompletion: { (completion) in
-                self.isLoading = false
-                switch completion {
-                case .finished:
-                    break
-                case .failure(let error):
-                    print(error.localizedDescription)
-                }
-            }, receiveValue: { [weak self] (response) in
-                self?.type = .postApi
-                self?.Appresponse.postExa = response
-            })
-            .store(in: &cancellables)
-    }
+
+
  func getPerson(){
         isLoading = true
-        apiService.GET(endpoint: Constant.endpoint.person1, objectType: Person.self)
+     apiService.apiHandler(endpoint: Constant.endpoint.person1, parameters: commonRequest, method: .get, objectType: Person.self)
             .sink(receiveCompletion: { [weak self] completion in
                 self?.isLoading = false
                 switch completion {
@@ -78,44 +63,27 @@ class ViewModel {
             })
             .store(in: &cancellables)
     }
-    func getappoint(){
-        isLoading = true
-        apiService.GET(endpoint: Constant.endpoint.person2, objectType: Appointment.self)
-            .sink(receiveCompletion: { [weak self] completion in
-                self?.isLoading = false
-                switch completion {
-                case .finished:
-                    break
-                case .failure(let error):
-                    self?.error = error
-                }
-            }, receiveValue: { [weak self] res in
-                self?.type = .appointment
-                
-                self?.Appresponse.Apppint = res
-            })
-            .store(in: &cancellables)
-    }
-    
-    func multipleAPI(){
-//        let objectTypeArray = [Person.self, Person2.self, Appointment.self] as [Any]
 
-        isLoading = true
-        apiService.MultipleAPI(endpoints: endpoints, objectType: Person2.self)
-            .sink(receiveCompletion: { completion in
-                self.isLoading = false
-                switch completion {
-                case .finished:
-                    print("All requests completed.")
-                case .failure(let error):
-                    print("Error:", error)
-                }
-            }, receiveValue: { people in
-                print("Received people:", people)
-                
-            })
-            .store(in: &cancellables)
-    }
+    
+//    func multipleAPI(){
+////        let objectTypeArray = [Person.self, Person2.self, Appointment.self] as [Any]
+//
+//        isLoading = true
+//        apiService.MultipleAPI(endpoints: endpoints, objectType: Person2.self)
+//            .sink(receiveCompletion: { completion in
+//                self.isLoading = false
+//                switch completion {
+//                case .finished:
+//                    print("All requests completed.")
+//                case .failure(let error):
+//                    print("Error:", error)
+//                }
+//            }, receiveValue: { people in
+//                print("Received people:", people)
+//
+//            })
+//            .store(in: &cancellables)
+//    }
     
     
 //    func multipleAPiDATA(){

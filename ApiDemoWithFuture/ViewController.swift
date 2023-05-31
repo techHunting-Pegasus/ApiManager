@@ -25,21 +25,16 @@ class ViewController: BaseVC {
         super.viewDidLoad()
         observer()
         
-        
+        viewModel.getPerson()
     }
     
     @IBAction   func apiButton(_ sender: UIButton) {
-        // Call the fetchData() method of the ViewModel
-//        viewModel.postExample(parameters: AppRequest(title: "hello ishpree singh", body: "hello ios developer"))
-        
-        
+
     }
     
     
     @IBAction func secondBUtton(_ sender: Any) {
-//        viewModel.getappoint()
-        
-        viewModel.multipleAPI()
+
         
     }
     
@@ -53,10 +48,10 @@ class ViewController: BaseVC {
             viewModel.$Appresponse.combineLatest( viewModel.$error)
             .sink { [weak self] response, error in
 
-                if let _ = self{
+                if let res = self{
                     switch self!.viewModel.type {
                     case .getuser:
-                        print("")
+                        print(res)
                     case .appointment:
                         print("")
                     case .postApi:
