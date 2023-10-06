@@ -22,10 +22,12 @@
 		52513C9129FA5F4D00811ACC /* AppResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52513C9029FA5F4D00811ACC /* AppResponse.swift */; };
 		52513C9329FA691500811ACC /* AppDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52513C9229FA691500811ACC /* AppDefault.swift */; };
 		52709EB329FBCFB200CBD872 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52709EB229FBCFB200CBD872 /* NetworkMonitor.swift */; };
+		529372812AD00D9F00513BFF /* HelperClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529372802AD00D9F00513BFF /* HelperClass.swift */; };
 		859FF92EFDB1B592D3347F69 /* Pods_ApiDemoWithFuture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2EE9499F46B9CB9C00598D /* Pods_ApiDemoWithFuture.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21717AFF7C58A9A0AAE5B074 /* Pods-ApiDemoWithFuture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiDemoWithFuture.debug.xcconfig"; path = "Target Support Files/Pods-ApiDemoWithFuture/Pods-ApiDemoWithFuture.debug.xcconfig"; sourceTree = "<group>"; };
 		2452A874BFFDDC0FA74818A5 /* Pods-ApiDemoWithFuture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiDemoWithFuture.release.xcconfig"; path = "Target Support Files/Pods-ApiDemoWithFuture/Pods-ApiDemoWithFuture.release.xcconfig"; sourceTree = "<group>"; };
 		5241589129F8F94800192294 /* ApiDemoWithFuture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApiDemoWithFuture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5241589429F8F94800192294 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,7 +46,9 @@
 		52513C9029FA5F4D00811ACC /* AppResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppResponse.swift; sourceTree = "<group>"; };
 		52513C9229FA691500811ACC /* AppDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDefault.swift; sourceTree = "<group>"; };
 		52709EB229FBCFB200CBD872 /* NetworkMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		529372802AD00D9F00513BFF /* HelperClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperClass.swift; sourceTree = "<group>"; };
 		77000FFE6186DFF62948448E /* Pods-ApiDemoWithFuture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiDemoWithFuture.debug.xcconfig"; path = "Target Support Files/Pods-ApiDemoWithFuture/Pods-ApiDemoWithFuture.debug.xcconfig"; sourceTree = "<group>"; };
+		BE72070787DF152C463DB239 /* Pods-ApiDemoWithFuture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiDemoWithFuture.release.xcconfig"; path = "Target Support Files/Pods-ApiDemoWithFuture/Pods-ApiDemoWithFuture.release.xcconfig"; sourceTree = "<group>"; };
 		FE2EE9499F46B9CB9C00598D /* Pods_ApiDemoWithFuture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApiDemoWithFuture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -66,6 +70,7 @@
 				5241589329F8F94800192294 /* ApiDemoWithFuture */,
 				5241589229F8F94800192294 /* Products */,
 				749426BB5F43B715475A9292 /* Frameworks */,
+				92733AD07789D9446E465A7E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,24 +85,137 @@
 		5241589329F8F94800192294 /* ApiDemoWithFuture */ = {
 			isa = PBXGroup;
 			children = (
-				5241589429F8F94800192294 /* AppDelegate.swift */,
-				5241589629F8F94800192294 /* SceneDelegate.swift */,
-				5241589829F8F94800192294 /* ViewController.swift */,
+				5293727F2AD00D2500513BFF /* Helper */,
+				5293727B2AD00B5600513BFF /* AppResponse */,
+				5293727A2AD00B2700513BFF /* BaseClass */,
+				529372742AD00A5A00513BFF /* Controller */,
+				529372732AD00A3D00513BFF /* Delegate */,
 				5241589A29F8F94800192294 /* Main.storyboard */,
 				5241589D29F8F94900192294 /* Assets.xcassets */,
 				5241589F29F8F94900192294 /* LaunchScreen.storyboard */,
 				524158A229F8F94900192294 /* Info.plist */,
-				524158A829F8FA2300192294 /* ApiService.swift */,
-				524158AA29F8FA3800192294 /* ViewModel.swift */,
-				524158AC29F9011900192294 /* model.swift */,
-				524158AE29F936B200192294 /* Constants.swift */,
-				524158B029F9378B00192294 /* ApiRequest.swift */,
-				52513C8E29FA586500811ACC /* BaseVC.swift */,
-				52513C9029FA5F4D00811ACC /* AppResponse.swift */,
-				52513C9229FA691500811ACC /* AppDefault.swift */,
-				52709EB229FBCFB200CBD872 /* NetworkMonitor.swift */,
 			);
 			path = ApiDemoWithFuture;
+			sourceTree = "<group>";
+		};
+		529372732AD00A3D00513BFF /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				5241589429F8F94800192294 /* AppDelegate.swift */,
+				5241589629F8F94800192294 /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		529372742AD00A5A00513BFF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				529372822AD00DC400513BFF /* Main */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		529372752AD00A7B00513BFF /* ApiService */ = {
+			isa = PBXGroup;
+			children = (
+				524158A829F8FA2300192294 /* ApiService.swift */,
+			);
+			path = ApiService;
+			sourceTree = "<group>";
+		};
+		529372762AD00AA100513BFF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				524158AA29F8FA3800192294 /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		529372772AD00AB600513BFF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				524158AC29F9011900192294 /* model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		529372782AD00AEA00513BFF /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				524158AE29F936B200192294 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		529372792AD00B0600513BFF /* ApiRequest */ = {
+			isa = PBXGroup;
+			children = (
+				524158B029F9378B00192294 /* ApiRequest.swift */,
+			);
+			path = ApiRequest;
+			sourceTree = "<group>";
+		};
+		5293727A2AD00B2700513BFF /* BaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				52513C8E29FA586500811ACC /* BaseVC.swift */,
+			);
+			path = BaseClass;
+			sourceTree = "<group>";
+		};
+		5293727B2AD00B5600513BFF /* AppResponse */ = {
+			isa = PBXGroup;
+			children = (
+				52513C9029FA5F4D00811ACC /* AppResponse.swift */,
+			);
+			path = AppResponse;
+			sourceTree = "<group>";
+		};
+		5293727C2AD00B9A00513BFF /* Appdefaults */ = {
+			isa = PBXGroup;
+			children = (
+				52513C9229FA691500811ACC /* AppDefault.swift */,
+			);
+			path = Appdefaults;
+			sourceTree = "<group>";
+		};
+		5293727D2AD00BBA00513BFF /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				52709EB229FBCFB200CBD872 /* NetworkMonitor.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		5293727E2AD00C8300513BFF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5241589829F8F94800192294 /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5293727F2AD00D2500513BFF /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				5293727C2AD00B9A00513BFF /* Appdefaults */,
+				529372782AD00AEA00513BFF /* Constants */,
+				5293727D2AD00BBA00513BFF /* NetworkManager */,
+				529372752AD00A7B00513BFF /* ApiService */,
+				529372802AD00D9F00513BFF /* HelperClass.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		529372822AD00DC400513BFF /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				529372792AD00B0600513BFF /* ApiRequest */,
+				5293727E2AD00C8300513BFF /* View */,
+				529372762AD00AA100513BFF /* ViewModel */,
+				529372772AD00AB600513BFF /* Model */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		749426BB5F43B715475A9292 /* Frameworks */ = {
@@ -107,6 +225,15 @@
 				FE2EE9499F46B9CB9C00598D /* Pods_ApiDemoWithFuture.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		92733AD07789D9446E465A7E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				21717AFF7C58A9A0AAE5B074 /* Pods-ApiDemoWithFuture.debug.xcconfig */,
+				BE72070787DF152C463DB239 /* Pods-ApiDemoWithFuture.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		ED1D5FF03516E0CABEFDC8D7 /* Pods */ = {
@@ -236,6 +363,7 @@
 				52513C9129FA5F4D00811ACC /* AppResponse.swift in Sources */,
 				52709EB329FBCFB200CBD872 /* NetworkMonitor.swift in Sources */,
 				524158AB29F8FA3800192294 /* ViewModel.swift in Sources */,
+				529372812AD00D9F00513BFF /* HelperClass.swift in Sources */,
 				524158AD29F9011900192294 /* model.swift in Sources */,
 				5241589929F8F94800192294 /* ViewController.swift in Sources */,
 				5241589529F8F94800192294 /* AppDelegate.swift in Sources */,

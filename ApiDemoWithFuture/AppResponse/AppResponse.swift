@@ -7,10 +7,7 @@
 
 //import Foundation
 //
-protocol JsonDeserializer {
-    init()
-    mutating func deserialize(values: Dictionary<String, Any>?)
-}
+
 
 struct AppResponse {
     var person : Person = Person()

@@ -8,16 +8,6 @@
 import Foundation
 import UIKit
 
-protocol JsonSerilizer{
-    func serilize() -> Dictionary<String,Any>
-}
-
-struct CommonRequest: JsonSerilizer {
-    
-    func serilize() -> Dictionary<String, Any> {
-        return [:]
-    }
-}
 
 struct AppRequest : JsonSerilizer {
   
