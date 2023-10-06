@@ -25,10 +25,11 @@ class ViewController: BaseVC {
         super.viewDidLoad()
         observer()
         
-        viewModel.getPerson()
+//        viewModel.getPerson()
     }
     
     @IBAction   func apiButton(_ sender: UIButton) {
+        viewModel.create(createuserdata:AppRequest(name: "ishpreet singh", salary: "78955", age: "25"))
 
     }
     
@@ -51,12 +52,12 @@ class ViewController: BaseVC {
                 if let res = self{
                     switch self!.viewModel.type {
                     case .getuser:
-                        print(res)
+                        print("res")
                     case .appointment:
                         print("")
                     case .postApi:
                         print("hello api hit succesfully")
-                        
+                        print(res)
                     case .none:
                         break
                     }

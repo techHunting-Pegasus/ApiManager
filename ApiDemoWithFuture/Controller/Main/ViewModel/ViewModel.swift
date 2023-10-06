@@ -63,6 +63,27 @@ class ViewModel {
             })
             .store(in: &cancellables)
     }
+    
+    func  create(createuserdata: AppRequest){
+        isLoading = true
+        apiService.apiHandler(endpoint: Constant.endpoint.create, parameters: createuserdata , method: .post, objectType: createuser.self)
+            .sink(receiveCompletion: { [weak self] completion in
+                self?.isLoading = false
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    self?.error = error
+                }
+            }, receiveValue: { [weak self] res in
+                self?.type = .postApi
+                
+                self?.Appresponse.createuUser  = res
+                
+            })
+            .store(in: &cancellables)
+        
+    }
 
     
 //    func multipleAPI(){

@@ -21,14 +21,16 @@ struct CommonRequest: JsonSerilizer {
 
 struct AppRequest : JsonSerilizer {
   
-    var title: String = ""
-    var body : String = ""
+    var name: String = ""
+    var salary : String = ""
+    var age : String = ""
     
     func serilize() -> Dictionary<String, Any> {
         return [
           
-            "title": title,
-            "body": body,
+            "name": name,
+            "salary": salary,
+            "age": age
         ]
     }
 }

@@ -62,3 +62,44 @@ struct postRes: JsonDeserializer, Hashable, Decodable {
        
     }
 }
+
+struct createuser: JsonDeserializer, Hashable, Decodable {
+    init() { }
+    var status: String?
+    var message: String?
+    var data = DataClass()
+    mutating func deserialize(values: Dictionary<String, Any>?) {
+        status = values?["status"] as? String
+        message = values?["message"] as? String
+        
+        //MARK: if the response is direct dictionary
+        if let detail = values?["data"] as? Dictionary<String, Any>{
+     
+            data.deserialize(values: detail)
+        }
+        //MARK: if the response isarray of dictionary
+//        if let detail = values?["data"] as? Array<Dictionary<String, Any>>{
+//            for d in detail{
+//                var app = DataClass.init()
+//                app.deserialize(values: d)
+//                data.append(app)
+//            }
+//        }
+        
+    }
+}
+
+// MARK: - DataClass
+struct DataClass: JsonDeserializer, Hashable, Decodable {
+    
+    var  name : String?
+    var  salary : String?
+    var age: String?
+    var  id: Int?
+    mutating func deserialize(values: Dictionary<String, Any>?) {
+        name = values?["name"] as? String
+        salary = values?["salary"] as? String
+        age = values?["age"] as? String
+        id = values?["id"] as? Int
+    }
+}
