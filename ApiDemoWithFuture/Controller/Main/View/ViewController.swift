@@ -24,7 +24,7 @@ class ViewController: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         observer()
-        
+      
 //        viewModel.getPerson()
     }
     
@@ -49,17 +49,18 @@ class ViewController: BaseVC {
             viewModel.$Appresponse.combineLatest( viewModel.$error)
             .sink { [weak self] response, error in
 
-                if let res = self{
-                    switch self!.viewModel.type {
-                    case .getuser:
-                        print("res")
-                    case .appointment:
-                        print("")
-                    case .postApi:
-                        print("hello api hit succesfully")
-                        print(res)
-                    case .none:
-                        break
+                guard let self = self else{return}
+                print(response, "response")
+                if (response.login.status == true) {
+                   
+                }else if (response.login.status == false){
+                    
+                }
+                else{
+                    if let err = error{
+                        if err.localizedDescription != ""{
+                            showAlert("\(err.localizedDescription)")
+                        }
                     }
                 }
                 

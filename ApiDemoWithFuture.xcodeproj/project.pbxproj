@@ -18,11 +18,27 @@
 		524158AD29F9011900192294 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524158AC29F9011900192294 /* model.swift */; };
 		524158AF29F936B200192294 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524158AE29F936B200192294 /* Constants.swift */; };
 		524158B129F9378B00192294 /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524158B029F9378B00192294 /* ApiRequest.swift */; };
-		52513C8F29FA586500811ACC /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52513C8E29FA586500811ACC /* BaseVC.swift */; };
 		52513C9129FA5F4D00811ACC /* AppResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52513C9029FA5F4D00811ACC /* AppResponse.swift */; };
 		52513C9329FA691500811ACC /* AppDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52513C9229FA691500811ACC /* AppDefault.swift */; };
-		52709EB329FBCFB200CBD872 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52709EB229FBCFB200CBD872 /* NetworkMonitor.swift */; };
+		528BC1C02BF4F0BA0086AB3F /* 54633-no-internet-access-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 528BC1BB2BF4F0BA0086AB3F /* 54633-no-internet-access-animation.json */; };
+		528BC1C12BF4F0BA0086AB3F /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528BC1BC2BF4F0BA0086AB3F /* BaseVC.swift */; };
+		528BC1C22BF4F0BA0086AB3F /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528BC1BD2BF4F0BA0086AB3F /* Navigator.swift */; };
+		528BC1C32BF4F0BA0086AB3F /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528BC1BE2BF4F0BA0086AB3F /* NetworkMonitor.swift */; };
+		528BC1D92BF4F36C0086AB3F /* DeviceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528BC1C82BF4F36C0086AB3F /* DeviceUtils.swift */; };
+		528BC1DA2BF4F36C0086AB3F /* DynamicHeightCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528BC1C92BF4F36C0086AB3F /* DynamicHeightCollectionView.swift */; };
+		528BC1DB2BF4F36C0086AB3F /* DynamicHeightTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528BC1CA2BF4F36C0086AB3F /* DynamicHeightTableView.swift */; };
+		528BC1DC2BF4F36C0086AB3F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528BC1CB2BF4F36C0086AB3F /* Extensions.swift */; };
+		528BC1DD2BF4F36C0086AB3F /* InstaStories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528BC1CC2BF4F36C0086AB3F /* InstaStories.swift */; };
+		528BC1E02BF4F36C0086AB3F /* PreferenceKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528BC1CF2BF4F36C0086AB3F /* PreferenceKeys.swift */; };
+		528BC1E12BF4F36C0086AB3F /* RectangularDashedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528BC1D02BF4F36C0086AB3F /* RectangularDashedView.swift */; };
+		528BC1E22BF4F36C0086AB3F /* UPCarouselFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528BC1D12BF4F36C0086AB3F /* UPCarouselFlowLayout.swift */; };
+		528BC1E32BF4F36C0086AB3F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528BC1D22BF4F36C0086AB3F /* Utils.swift */; };
+		528BC1E42BF4F36C0086AB3F /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528BC1D32BF4F36C0086AB3F /* Validator.swift */; };
 		529372812AD00D9F00513BFF /* HelperClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529372802AD00D9F00513BFF /* HelperClass.swift */; };
+		52BB288E2BF5F65A00D0D08D /* AppleLoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BB28892BF5F65A00D0D08D /* AppleLoginHelper.swift */; };
+		52BB288F2BF5F65A00D0D08D /* FacebookSignInHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BB288A2BF5F65A00D0D08D /* FacebookSignInHelper.swift */; };
+		52BB28902BF5F65A00D0D08D /* GoogleSignInHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BB288B2BF5F65A00D0D08D /* GoogleSignInHelper.swift */; };
+		52BB28912BF5F65A00D0D08D /* SocialSignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BB288C2BF5F65A00D0D08D /* SocialSignInModel.swift */; };
 		859FF92EFDB1B592D3347F69 /* Pods_ApiDemoWithFuture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2EE9499F46B9CB9C00598D /* Pods_ApiDemoWithFuture.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,11 +58,27 @@
 		524158AC29F9011900192294 /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
 		524158AE29F936B200192294 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		524158B029F9378B00192294 /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
-		52513C8E29FA586500811ACC /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		52513C9029FA5F4D00811ACC /* AppResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppResponse.swift; sourceTree = "<group>"; };
 		52513C9229FA691500811ACC /* AppDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDefault.swift; sourceTree = "<group>"; };
-		52709EB229FBCFB200CBD872 /* NetworkMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		528BC1BB2BF4F0BA0086AB3F /* 54633-no-internet-access-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "54633-no-internet-access-animation.json"; sourceTree = "<group>"; };
+		528BC1BC2BF4F0BA0086AB3F /* BaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		528BC1BD2BF4F0BA0086AB3F /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		528BC1BE2BF4F0BA0086AB3F /* NetworkMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		528BC1C82BF4F36C0086AB3F /* DeviceUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceUtils.swift; sourceTree = "<group>"; };
+		528BC1C92BF4F36C0086AB3F /* DynamicHeightCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicHeightCollectionView.swift; sourceTree = "<group>"; };
+		528BC1CA2BF4F36C0086AB3F /* DynamicHeightTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicHeightTableView.swift; sourceTree = "<group>"; };
+		528BC1CB2BF4F36C0086AB3F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		528BC1CC2BF4F36C0086AB3F /* InstaStories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstaStories.swift; sourceTree = "<group>"; };
+		528BC1CF2BF4F36C0086AB3F /* PreferenceKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceKeys.swift; sourceTree = "<group>"; };
+		528BC1D02BF4F36C0086AB3F /* RectangularDashedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangularDashedView.swift; sourceTree = "<group>"; };
+		528BC1D12BF4F36C0086AB3F /* UPCarouselFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UPCarouselFlowLayout.swift; sourceTree = "<group>"; };
+		528BC1D22BF4F36C0086AB3F /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		528BC1D32BF4F36C0086AB3F /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		529372802AD00D9F00513BFF /* HelperClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperClass.swift; sourceTree = "<group>"; };
+		52BB28892BF5F65A00D0D08D /* AppleLoginHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleLoginHelper.swift; sourceTree = "<group>"; };
+		52BB288A2BF5F65A00D0D08D /* FacebookSignInHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookSignInHelper.swift; sourceTree = "<group>"; };
+		52BB288B2BF5F65A00D0D08D /* GoogleSignInHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleSignInHelper.swift; sourceTree = "<group>"; };
+		52BB288C2BF5F65A00D0D08D /* SocialSignInModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialSignInModel.swift; sourceTree = "<group>"; };
 		77000FFE6186DFF62948448E /* Pods-ApiDemoWithFuture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiDemoWithFuture.debug.xcconfig"; path = "Target Support Files/Pods-ApiDemoWithFuture/Pods-ApiDemoWithFuture.debug.xcconfig"; sourceTree = "<group>"; };
 		BE72070787DF152C463DB239 /* Pods-ApiDemoWithFuture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiDemoWithFuture.release.xcconfig"; path = "Target Support Files/Pods-ApiDemoWithFuture/Pods-ApiDemoWithFuture.release.xcconfig"; sourceTree = "<group>"; };
 		FE2EE9499F46B9CB9C00598D /* Pods_ApiDemoWithFuture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApiDemoWithFuture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,7 +119,8 @@
 			children = (
 				5293727F2AD00D2500513BFF /* Helper */,
 				5293727B2AD00B5600513BFF /* AppResponse */,
-				5293727A2AD00B2700513BFF /* BaseClass */,
+				52BB288D2BF5F65A00D0D08D /* SocialLogin */,
+				528BC1D42BF4F36C0086AB3F /* Utils */,
 				529372742AD00A5A00513BFF /* Controller */,
 				529372732AD00A3D00513BFF /* Delegate */,
 				5241589A29F8F94800192294 /* Main.storyboard */,
@@ -96,6 +129,33 @@
 				524158A229F8F94900192294 /* Info.plist */,
 			);
 			path = ApiDemoWithFuture;
+			sourceTree = "<group>";
+		};
+		528BC1BF2BF4F0BA0086AB3F /* BaseVC */ = {
+			isa = PBXGroup;
+			children = (
+				528BC1BB2BF4F0BA0086AB3F /* 54633-no-internet-access-animation.json */,
+				528BC1BC2BF4F0BA0086AB3F /* BaseVC.swift */,
+				528BC1BD2BF4F0BA0086AB3F /* Navigator.swift */,
+				528BC1BE2BF4F0BA0086AB3F /* NetworkMonitor.swift */,
+			);
+			path = BaseVC;
+			sourceTree = "<group>";
+		};
+		528BC1D42BF4F36C0086AB3F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				528BC1C82BF4F36C0086AB3F /* DeviceUtils.swift */,
+				528BC1C92BF4F36C0086AB3F /* DynamicHeightCollectionView.swift */,
+				528BC1CA2BF4F36C0086AB3F /* DynamicHeightTableView.swift */,
+				528BC1CB2BF4F36C0086AB3F /* Extensions.swift */,
+				528BC1CC2BF4F36C0086AB3F /* InstaStories.swift */,
+				528BC1D02BF4F36C0086AB3F /* RectangularDashedView.swift */,
+				528BC1D12BF4F36C0086AB3F /* UPCarouselFlowLayout.swift */,
+				528BC1D22BF4F36C0086AB3F /* Utils.swift */,
+				528BC1D32BF4F36C0086AB3F /* Validator.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		529372732AD00A3D00513BFF /* Delegate */ = {
@@ -155,14 +215,6 @@
 			path = ApiRequest;
 			sourceTree = "<group>";
 		};
-		5293727A2AD00B2700513BFF /* BaseClass */ = {
-			isa = PBXGroup;
-			children = (
-				52513C8E29FA586500811ACC /* BaseVC.swift */,
-			);
-			path = BaseClass;
-			sourceTree = "<group>";
-		};
 		5293727B2AD00B5600513BFF /* AppResponse */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,14 +231,6 @@
 			path = Appdefaults;
 			sourceTree = "<group>";
 		};
-		5293727D2AD00BBA00513BFF /* NetworkManager */ = {
-			isa = PBXGroup;
-			children = (
-				52709EB229FBCFB200CBD872 /* NetworkMonitor.swift */,
-			);
-			path = NetworkManager;
-			sourceTree = "<group>";
-		};
 		5293727E2AD00C8300513BFF /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,9 +242,10 @@
 		5293727F2AD00D2500513BFF /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				52BB28922BF5F9BD00D0D08D /* PrefrenceKey */,
 				5293727C2AD00B9A00513BFF /* Appdefaults */,
 				529372782AD00AEA00513BFF /* Constants */,
-				5293727D2AD00BBA00513BFF /* NetworkManager */,
+				528BC1BF2BF4F0BA0086AB3F /* BaseVC */,
 				529372752AD00A7B00513BFF /* ApiService */,
 				529372802AD00D9F00513BFF /* HelperClass.swift */,
 			);
@@ -216,6 +261,25 @@
 				529372772AD00AB600513BFF /* Model */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		52BB288D2BF5F65A00D0D08D /* SocialLogin */ = {
+			isa = PBXGroup;
+			children = (
+				52BB28892BF5F65A00D0D08D /* AppleLoginHelper.swift */,
+				52BB288A2BF5F65A00D0D08D /* FacebookSignInHelper.swift */,
+				52BB288B2BF5F65A00D0D08D /* GoogleSignInHelper.swift */,
+				52BB288C2BF5F65A00D0D08D /* SocialSignInModel.swift */,
+			);
+			path = SocialLogin;
+			sourceTree = "<group>";
+		};
+		52BB28922BF5F9BD00D0D08D /* PrefrenceKey */ = {
+			isa = PBXGroup;
+			children = (
+				528BC1CF2BF4F36C0086AB3F /* PreferenceKeys.swift */,
+			);
+			path = PrefrenceKey;
 			sourceTree = "<group>";
 		};
 		749426BB5F43B715475A9292 /* Frameworks */ = {
@@ -305,6 +369,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				528BC1C02BF4F0BA0086AB3F /* 54633-no-internet-access-animation.json in Resources */,
 				524158A129F8F94900192294 /* LaunchScreen.storyboard in Resources */,
 				5241589E29F8F94900192294 /* Assets.xcassets in Resources */,
 				5241589C29F8F94800192294 /* Main.storyboard in Resources */,
@@ -361,18 +426,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				52513C9129FA5F4D00811ACC /* AppResponse.swift in Sources */,
-				52709EB329FBCFB200CBD872 /* NetworkMonitor.swift in Sources */,
 				524158AB29F8FA3800192294 /* ViewModel.swift in Sources */,
 				529372812AD00D9F00513BFF /* HelperClass.swift in Sources */,
+				528BC1C22BF4F0BA0086AB3F /* Navigator.swift in Sources */,
+				52BB28902BF5F65A00D0D08D /* GoogleSignInHelper.swift in Sources */,
 				524158AD29F9011900192294 /* model.swift in Sources */,
+				528BC1E22BF4F36C0086AB3F /* UPCarouselFlowLayout.swift in Sources */,
 				5241589929F8F94800192294 /* ViewController.swift in Sources */,
+				528BC1E32BF4F36C0086AB3F /* Utils.swift in Sources */,
+				528BC1DA2BF4F36C0086AB3F /* DynamicHeightCollectionView.swift in Sources */,
+				52BB28912BF5F65A00D0D08D /* SocialSignInModel.swift in Sources */,
+				52BB288F2BF5F65A00D0D08D /* FacebookSignInHelper.swift in Sources */,
 				5241589529F8F94800192294 /* AppDelegate.swift in Sources */,
+				528BC1DC2BF4F36C0086AB3F /* Extensions.swift in Sources */,
+				528BC1DB2BF4F36C0086AB3F /* DynamicHeightTableView.swift in Sources */,
+				528BC1E12BF4F36C0086AB3F /* RectangularDashedView.swift in Sources */,
 				52513C9329FA691500811ACC /* AppDefault.swift in Sources */,
-				52513C8F29FA586500811ACC /* BaseVC.swift in Sources */,
+				528BC1E02BF4F36C0086AB3F /* PreferenceKeys.swift in Sources */,
+				528BC1D92BF4F36C0086AB3F /* DeviceUtils.swift in Sources */,
+				528BC1C12BF4F0BA0086AB3F /* BaseVC.swift in Sources */,
 				524158AF29F936B200192294 /* Constants.swift in Sources */,
+				52BB288E2BF5F65A00D0D08D /* AppleLoginHelper.swift in Sources */,
 				524158A929F8FA2300192294 /* ApiService.swift in Sources */,
+				528BC1E42BF4F36C0086AB3F /* Validator.swift in Sources */,
+				528BC1DD2BF4F36C0086AB3F /* InstaStories.swift in Sources */,
 				524158B129F9378B00192294 /* ApiRequest.swift in Sources */,
 				5241589729F8F94800192294 /* SceneDelegate.swift in Sources */,
+				528BC1C32BF4F0BA0086AB3F /* NetworkMonitor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

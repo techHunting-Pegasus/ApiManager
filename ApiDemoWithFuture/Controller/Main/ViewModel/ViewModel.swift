@@ -43,10 +43,15 @@ class ViewModel {
         self.apiService = apiService
     }
 
+    
+    let apiRequests: [MultipleAPIRequest<Decodable>] = [
+      MultipleAPIRequest(url: URL(string: "https://api.example.com/data1")!, model: LoginModel.self),
+    
+    ]
 
  func getPerson(){
         isLoading = true
-     apiService.apiHandler(endpoint: Constant.endpoint.person1, parameters: commonRequest, method: .get, objectType: Person.self)
+     apiService.apiHandler(endpoint: Constant.endpoint.person1, parameters: commonRequest, method: .get, objectType: LoginModel.self)
             .sink(receiveCompletion: { [weak self] completion in
                 self?.isLoading = false
                 switch completion {
@@ -84,6 +89,55 @@ class ViewModel {
             .store(in: &cancellables)
         
     }
+    
+    func getMultipledata() {
+        let dispatchGroup = DispatchGroup()
+        let publishers = apiRequests.map { request -> AnyPublisher<Any, Error> in
+            let publisher = apiService.multipleApiCalling(from: request.url, model: request.model)
+                .handleEvents(receiveOutput: { (_: _) in // Specify the type of the parameter
+                    dispatchGroup.leave()
+                })
+                .eraseToAnyPublisher()
+            dispatchGroup.enter()
+            return publisher
+        }
+        Publishers.MergeMany(publishers)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    print("All API requests and model decodings are completed.")
+                case .failure(let error):
+                    print("Failed to fetch and decode model: \(error)")
+                }
+            }, receiveValue: { modelData in
+                switch modelData {
+                case let data as Person:
+                    var globalModel1Data = data
+                    print("data===> \(data)")
+                case let data as Person2:
+                    var globalModel2Data = data
+                    print("data===> \(data)")
+                case let data as Appointment:
+                    var globalModel10Data = data
+                    print("data===> \(data)")
+                default:
+                    print("Unknown model type")
+                }
+                // Handle your success case, perhaps store the data in an array or use it directly
+                print("Successfully fetched and decoded model: \(modelData)")
+            })
+            .store(in: &cancellables)
+    }
+
+    
+
+}
+
+
+struct MultipleAPIRequest<ModelType: Decodable> {
+    let url: URL
+    let model: ModelType.Type
+}
 
     
 //    func multipleAPI(){

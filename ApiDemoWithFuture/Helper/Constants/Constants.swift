@@ -10,8 +10,8 @@ import Alamofire
 import Combine
 
 struct Constant {
-    
-//    static let BASEURL = "https://swapi.dev/api/"
+    static let AppName = ""
+
 
     static let BASEURL = "https://dummy.restapiexample.com/api/v1/"
 

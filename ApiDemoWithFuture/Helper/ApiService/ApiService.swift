@@ -11,8 +11,7 @@ import Combine
 
 
 class APIService{
-  //static let shared = APIService()
-//    var headers:HTTPHeaders = [:]
+
     
     let headers : HTTPHeaders = ["Content-Type":"application/json",
                                  "Authorization":"Bearer \(AppDefaults.accessToken)"]
@@ -24,8 +23,6 @@ class APIService{
         return Session(configuration: configuration)
     }()
     
-   
-    
 
     func apiHandler<T: Decodable>(endpoint: String, parameters: JsonSerilizer, method: HTTPMethod, objectType: T.Type) -> AnyPublisher<T, Error> {
         print("*************** HEADERS *****************")
@@ -36,7 +33,7 @@ class APIService{
         let encoding: ParameterEncoding = (method == .get) ? URLEncoding.default : JSONEncoding.default
         
         return Future { promise in
-            AF.request(url, method: method, parameters: parameters.serilize(), encoding: encoding)
+            AF.request(url, method: method, parameters: parameters.serilize(), encoding: encoding,headers: self.headers)
                 .validate()
                 .responseDecodable(of: objectType) { response in
                     switch response.result {
@@ -55,6 +52,26 @@ class APIService{
 
     
 //MARK: MULTIPLEA API GENRIC FUNCTION
+    
+    func multipleApiCalling<T: Decodable>(from url: URL, model: T.Type) -> AnyPublisher<T, Error> {
+           return Future { promise in
+               AF.request(url, method: .get).responseData { response in
+                   switch response.result {
+                   case .success(let data):
+                       do {
+                           let decoder = JSONDecoder()
+                           let modelData = try decoder.decode(T.self, from: data)
+                           promise(.success(modelData))
+                       } catch {
+                           promise(.failure(error))
+                       }
+                   case .failure(let error):
+                       promise(.failure(error))
+                   }
+               }
+           }
+           .eraseToAnyPublisher()
+       }
     func MultipleAPI<T: Decodable>(endpoints: [String], objectType: T.Type) -> AnyPublisher<[T], Error> {
         let requests = endpoints.map { endpoint -> AnyPublisher<T, Error> in
 
@@ -72,36 +89,67 @@ class APIService{
     }
    
 
-    
- 
-    
-    func GetWithSetUrl<T: Decodable>(baseURL: String, headers: HTTPHeaders, path: String, objectType: T.Type) -> AnyPublisher<T, Error> {
-        let fullURL = "\(baseURL)\(headers)"
-       // modify headers as needed
-
-        return GetWithSetUrl(url: fullURL, headers: self.headers, objectType: objectType)
-    }
-
-    func GetWithSetUrl<T: Decodable>(url: String, headers: HTTPHeaders, objectType: T.Type) -> AnyPublisher<T, Error> {
+    func getApiHandler<T: Decodable>(endpoint: String, parameters: [String: Any]?, objectType: T.Type) -> AnyPublisher<T, Error> {
         print("*************** HEADERS *****************")
-        print(url,headers)
-        return Future { (promise: @escaping (Result<T, Error>) -> Void) in
-            AF.request(url,method: .get,parameters: [:],headers: headers)
-                .validate() // Add a "validate" call to ensure a successful response
-                .responseDecodable(of: objectType) { response in
-                switch response.result {
-                case .success(let object):
-                    promise(.success(object))
-
-                    print(object)
-                case .failure(let error):
-                    promise(.failure(error))
-                    print(error)
-                }
+        
+        var urlComponents = URLComponents(string: "\(Constant.BASEURL)\(endpoint)")!
+        
+        if let parameters = parameters {
+            var queryItems = [URLQueryItem]()
+            for (key, value) in parameters {
+                queryItems.append(URLQueryItem(name: key, value: "\(value)"))
             }
+            urlComponents.queryItems = queryItems
+        }
+        
+        let url = urlComponents.url!
+        print(url, headers)
+        
+        return Future { promise in
+            AF.request(url, method: .get, headers: self.headers)
+                .validate()
+                .responseDecodable(of: objectType) { response in
+                    switch response.result {
+                    case .success(let object):
+                        promise(.success(object))
+                        print(object)
+                    case .failure(let error):
+                        promise(.failure(error))
+                        print(error)
+                    }
+                }
         }
         .eraseToAnyPublisher()
     }
+ 
+    
+//    func GetWithSetUrl<T: Decodable>(baseURL: String, headers: HTTPHeaders, path: String, objectType: T.Type) -> AnyPublisher<T, Error> {
+//        let fullURL = "\(baseURL)\(headers)"
+//       // modify headers as needed
+//
+//        return GetWithSetUrl(url: fullURL, headers: self.headers, objectType: objectType)
+//    }
+//
+//    func GetWithSetUrl<T: Decodable>(url: String, headers: HTTPHeaders, objectType: T.Type) -> AnyPublisher<T, Error> {
+//        print("*************** HEADERS *****************")
+//        print(url,headers)
+//        return Future { (promise: @escaping (Result<T, Error>) -> Void) in
+//            AF.request(url,method: .get,parameters: [:],headers: headers)
+//                .validate() // Add a "validate" call to ensure a successful response
+//                .responseDecodable(of: objectType) { response in
+//                switch response.result {
+//                case .success(let object):
+//                    promise(.success(object))
+//
+//                    print(object)
+//                case .failure(let error):
+//                    promise(.failure(error))
+//                    print(error)
+//                }
+//            }
+//        }
+//        .eraseToAnyPublisher()
+//    }
    
     
     

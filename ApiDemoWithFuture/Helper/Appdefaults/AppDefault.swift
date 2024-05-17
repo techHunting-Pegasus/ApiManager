@@ -16,34 +16,19 @@ struct  AppDefaults{
             return UserDefaults.standard.string(forKey:  "accessToken") ?? ""
         }
     }
-    static var userData: Person? {
-            set {
-                guard let newValue = newValue else {
-                    UserDefaults.standard.set(nil, forKey: "userData")
-                    return
-                }
-                
-                do {
-                    let data = try PropertyListEncoder().encode(newValue)
-                    UserDefaults.standard.set(data, forKey: "userData")
-                } catch {
-                    print("Error encoding user data: \(error.localizedDescription)")
-                }
+    static var userData: LoginModel{
+        set{
+            UserDefaults.standard.set(try? PropertyListEncoder().encode(newValue), forKey:"userData")
+        }
+        get{
+            if let data = UserDefaults.standard.value(forKey:"userData") as? Data {
+                let userData = (try? PropertyListDecoder().decode(LoginModel.self, from: data)) ?? LoginModel()
+                return userData
             }
-            
-            get {
-                guard let data = UserDefaults.standard.data(forKey: "userData") else {
-                    return nil
-                }
-                
-                do {
-                    let userData = try PropertyListDecoder().decode(Person.self, from: data)
-                    return userData
-                } catch {
-                    print("Error decoding user data: \(error.localizedDescription)")
-                    return nil
-                }
+            else{
+              return LoginModel()
             }
         }
+    }
 
 }

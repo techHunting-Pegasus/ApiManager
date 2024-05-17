@@ -1,16 +1,46 @@
 PODS:
-  - Alamofire (5.6.4)
+  - Alamofire (5.9.1)
+  - Kingfisher (7.11.0)
+  - lottie-ios (4.4.3)
+  - MASegmentedControl (0.0.5)
+  - SVProgressHUD (2.3.1):
+    - SVProgressHUD/Core (= 2.3.1)
+  - SVProgressHUD/Core (2.3.1)
+  - SwiftGifOrigin (1.7.0)
+  - Toast (4.1.1)
+  - VisualEffectView (4.1.5)
 
 DEPENDENCIES:
-  - Alamofire (~> 5.6)
+  - Alamofire
+  - Kingfisher
+  - lottie-ios
+  - MASegmentedControl
+  - SVProgressHUD
+  - SwiftGifOrigin
+  - Toast
+  - VisualEffectView
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Kingfisher
+    - lottie-ios
+    - MASegmentedControl
+    - SVProgressHUD
+    - SwiftGifOrigin
+    - Toast
+    - VisualEffectView
 
 SPEC CHECKSUMS:
-  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
+  Kingfisher: b9c985d864d43515f404f1ef4a8ce7d802ace3ac
+  lottie-ios: fcb5e73e17ba4c983140b7d21095c834b3087418
+  MASegmentedControl: 9b58f9ba3a562a739b63b29e4ca2b9dc4d9c62cb
+  SVProgressHUD: 4837c74bdfe2e51e8821c397825996a8d7de6e22
+  SwiftGifOrigin: fbd6cf37afcfcf97a5c3db996ddc0492e5c5c145
+  Toast: 1f5ea13423a1e6674c4abdac5be53587ae481c4e
+  VisualEffectView: 333acded3f79d088ae44aff57d5f3a62554e37b6
 
-PODFILE CHECKSUM: 40b22b141ab94270769c912b59de3a76794ca171
+PODFILE CHECKSUM: e7386fb038cf649827a58e9c979f7af9f1f30e52
 
-COCOAPODS: 1.13.0
+COCOAPODS: 1.15.2
